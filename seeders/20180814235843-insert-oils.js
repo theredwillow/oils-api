@@ -1,11 +1,10 @@
-'use strict';
+"use strict";
 
-const oils = require('../essentialOilsBE');
+const oils = require("../essentialOilsBE");
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    
-    return queryInterface.bulkInsert('Oils', oils)
+    return queryInterface.bulkInsert("Oils", oils);
 
     /*
       Add altering commands here.
@@ -20,8 +19,7 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    
-    return queryInterface.bulkDelete('Oils', null, {});
+    return queryInterface.bulkDelete("Oils", null, {});
 
     /*
       Add reverting commands here.
@@ -30,5 +28,5 @@ module.exports = {
       Example:
       return queryInterface.bulkDelete('Person', null, {});
     */
-  }
+  },
 };

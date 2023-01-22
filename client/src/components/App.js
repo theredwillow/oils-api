@@ -121,20 +121,15 @@ class App extends Component {
         mood: e.target.dataset.mood,
       },
       function () {
-        let baseOilList = this.state.oilData.filter((oil) => {
-          return oil.level === "base" && oil.mood === this.state.mood;
-        });
-        let midOilList = this.state.oilData.filter((oil) => {
-          return oil.level === "middle" && oil.mood === this.state.mood;
-        });
-        let topOilList = this.state.oilData.filter((oil) => {
-          return oil.level === "top" && oil.mood === this.state.mood;
-        });
+        const getLevel = (level) =>
+          this.state.oilData.filter(
+            (oil) => oil.level === level && oil.mood === this.state.mood
+          );
         this.setState(
           {
-            baseLevel: baseOilList,
-            midLevel: midOilList,
-            topLevel: topOilList,
+            baseLevel: getLevel("base"),
+            midLevel: getLevel("middle"),
+            topLevel: getLevel("top"),
             toShow: true,
           },
           function () {
